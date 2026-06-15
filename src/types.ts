@@ -35,9 +35,9 @@ export interface ComparisonRow {
   subtitle?: string; // Standard & clear explanation
   category: "markets" | "timeframes" | "biases" | "outputs";
   categoryLabel: string;
-  [ProductTier.STARTER]: boolean;
-  [ProductTier.PRO]: boolean;
-  [ProductTier.ULTRA]: boolean;
+  [ProductTier.STARTER]: FeatureValue;
+  [ProductTier.PRO]: FeatureValue;
+  [ProductTier.ULTRA]: FeatureValue;
   isSpecial?: boolean;
 }
 

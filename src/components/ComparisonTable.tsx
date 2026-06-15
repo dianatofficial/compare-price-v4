@@ -30,7 +30,29 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = React.memo(({
     ? COMPARISON_ROWS 
     : COMPARISON_ROWS.filter(row => row.category === selectedCategory);
 
-  const renderCheckIcon = (tier: ProductTier, value: boolean) => {
+  const renderCheckIcon = (tier: ProductTier, value: boolean | string) => {
+    if (typeof value === "string") {
+      let textColor = "";
+      let bgStyle = "";
+      if (tier === ProductTier.STARTER) {
+        textColor = "text-white font-extrabold";
+        bgStyle = "bg-white/5 border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]";
+      } else if (tier === ProductTier.PRO) {
+        textColor = "text-[#bef264] font-extrabold";
+        bgStyle = "bg-[#bef264]/10 border border-[#bef264]/20 shadow-[0_0_8px_rgba(190,242,100,0.15),_inset_0_1px_1px_rgba(255,255,255,0.05)]";
+      } else {
+        textColor = "text-[#f43f5e] font-extrabold";
+        bgStyle = "bg-[#f43f5e]/10 border border-[#f43f5e]/20 shadow-[0_0_8px_rgba(244,63,94,0.15),_inset_0_1px_1px_rgba(255,255,255,0.05)]";
+      }
+      return (
+        <div className="flex justify-center items-center select-none py-0.5">
+          <span className={`px-2 py-0.5 text-[9px] sm:text-[10px] rounded-lg ${textColor} ${bgStyle} tracking-tight`}>
+            {value}
+          </span>
+        </div>
+      );
+    }
+
     if (!value) {
       return (
         <div className="flex justify-center items-center">

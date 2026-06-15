@@ -53,6 +53,17 @@ export const PLANS: PlanDetail[] = [
 ];
 
 export const COMPARISON_ROWS: ComparisonRow[] = [
+  {
+    id: "m_history",
+    title: "تاریخچه تحلیل",
+    subtitle: "دسترسی به سوابق تحلیلی سابق",
+    category: "markets",
+    categoryLabel: "پوشش بازارهای مالی و دارایی‌ها",
+    [ProductTier.STARTER]: "۱ تحلیل",
+    [ProductTier.PRO]: "۳ تحلیل آخر",
+    [ProductTier.ULTRA]: "۵ تحلیل آخر",
+    isSpecial: true
+  },
   // --- Markets Category ---
   {
     id: "m_crypto",
@@ -205,13 +216,13 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     subtitle: "شکار اردر بلاک",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
-    [ProductTier.STARTER]: false,
+    [ProductTier.STARTER]: true,
     [ProductTier.PRO]: true,
     [ProductTier.ULTRA]: true
   },
   {
     id: "b_smart_money",
-    title: "پول هوشمند",
+    title: "اسمارت مانی",
     subtitle: "جریان نقدینگی نهادی",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
@@ -226,7 +237,7 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: false,
-    [ProductTier.PRO]: true,
+    [ProductTier.PRO]: false,
     [ProductTier.ULTRA]: true,
     isSpecial: true
   },
@@ -263,13 +274,23 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
 
   // --- Outputs Category ---
   {
+    id: "o_modern_analysis",
+    title: "تحلیل مدرن",
+    subtitle: "متدهای پیشرفته بازار",
+    category: "outputs",
+    categoryLabel: "مدیریت خروجی‌ها و ابزار مانیتورینگ",
+    [ProductTier.STARTER]: true,
+    [ProductTier.PRO]: true,
+    [ProductTier.ULTRA]: true
+  },
+  {
     id: "o_deep_analysis",
     title: "تحلیل عمیق",
     subtitle: "ارزیابی چندلایه بازار",
     category: "outputs",
     categoryLabel: "مدیریت خروجی‌ها و ابزار مانیتورینگ",
     [ProductTier.STARTER]: false,
-    [ProductTier.PRO]: true,
+    [ProductTier.PRO]: false,
     [ProductTier.ULTRA]: true,
     isSpecial: true
   },
