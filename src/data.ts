@@ -56,8 +56,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   // --- Markets Category ---
   {
     id: "m_crypto",
-    title: "تحلیل تخصصی ارزهای دیجیتال",
-    subtitle: "پوشش جامع کوین‌ها و توکن‌های مارکت کریپتوکارنسی همراه با چارت‌های لایو",
+    title: "تحلیل ارز دیجیتال",
+    subtitle: "پوشش کامل بازار",
     category: "markets",
     categoryLabel: "پوشش بازارهای مالی و دارایی‌ها",
     [ProductTier.STARTER]: true,
@@ -66,8 +66,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "m_forex",
-    title: "تحلیل تخصصی جفت‌ارزهای فارکس",
-    subtitle: "پردازش جفت‌ارزهای اصلی، فرعی فاندامنتال و تکنیکال بازارهای جهانی",
+    title: "تحلیل بازار فارکس",
+    subtitle: "پردازش جفت‌ارزهای اصلی",
     category: "markets",
     categoryLabel: "پوشش بازارهای مالی و دارایی‌ها",
     [ProductTier.STARTER]: true,
@@ -76,8 +76,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "m_us_stocks",
-    title: "تحلیل سهام بورس آمریکا",
-    subtitle: "مانیتورینگ بزرگ‌ترین شرکت‌های ایالات متحده (NASDAQ, NYSE)",
+    title: "سهام بورس آمریکا",
+    subtitle: "رصد سهام جهانی",
     category: "markets",
     categoryLabel: "پوشش بازارهای مالی و دارایی‌ها",
     [ProductTier.STARTER]: true,
@@ -86,8 +86,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "m_iran_stocks",
-    title: "تحلیل تکنیکال بورس ایران",
-    subtitle: "پوشش نمادهای فعال بازار سرمایه ایران بر اساس فرمول‌های تحلیل بومی",
+    title: "بورس ایران",
+    subtitle: "نمادهای فعال بازار",
     category: "markets",
     categoryLabel: "پوشش بازارهای مالی و دارایی‌ها",
     [ProductTier.STARTER]: true,
@@ -98,18 +98,19 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   // --- Timeframes Category ---
   {
     id: "t_minute",
-    title: "تحلیل چارت دقیقه‌ای (کوتاه‌مدت)",
-    subtitle: "تحلیل و پردازش تایم‌فریم‌های ۱ الی ۱۵ دقیقه برای معاملات نوسان‌گیری فوق‌ سریع اسکالپ",
+    title: "چارت دقیقه‌ای",
+    subtitle: "اسکالپ فوق سریع",
     category: "timeframes",
     categoryLabel: "تایم‌فریم‌های فرکانس معاملاتی",
     [ProductTier.STARTER]: false,
     [ProductTier.PRO]: true,
-    [ProductTier.ULTRA]: true
+    [ProductTier.ULTRA]: true,
+    isSpecial: true
   },
   {
     id: "t_hourly",
-    title: "تحلیل ساعتی و بین‌روزی",
-    subtitle: "پیش‌بینی حرکت بازار در بازه‌های زمانی ۱ و ۴ ساعته برای معاملات روزانه",
+    title: "تحلیل ساعتی",
+    subtitle: "معاملات روزانه دقیق",
     category: "timeframes",
     categoryLabel: "تایم‌فریم‌های فرکانس معاملاتی",
     [ProductTier.STARTER]: true,
@@ -118,8 +119,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "t_daily",
-    title: "تحلیل روزانه (دیلی)",
-    subtitle: "استخراج روند کلی و حمایت/مقاومت‌های معتبر جهت نوسانات میان‌مدت",
+    title: "تحلیل روزانه",
+    subtitle: "تعیین حمایت مقاومت",
     category: "timeframes",
     categoryLabel: "تایم‌فریم‌های فرکانس معاملاتی",
     [ProductTier.STARTER]: true,
@@ -128,8 +129,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "t_weekly",
-    title: "تحلیل هفتگی (سوئینگ)",
-    subtitle: "رویکرد عمیق هفتگی به روند بازار مناسب سرمایه‌گذاران بلندمدت",
+    title: "تحلیل هفتگی",
+    subtitle: "روند میان‌مدت بلندمدت",
     category: "timeframes",
     categoryLabel: "تایم‌فریم‌های فرکانس معاملاتی",
     [ProductTier.STARTER]: true,
@@ -140,8 +141,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   // --- Biases Category ---
   {
     id: "b_technical_patterns",
-    title: "تحلیل بر اساس الگوهای تکنیکال",
-    subtitle: "شناسایی کلاسیک الگوهای نموداری از قبیل سر و شانه، کف و سقف‌های دوگانه و کانال‌ها",
+    title: "الگوهای تکنیکال",
+    subtitle: "شناسایی کلاسیک نمودار",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: true,
@@ -150,8 +151,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_price_action",
-    title: "تحلیل پرایس اکشن",
-    subtitle: "بررسی رفتار کندل‌ها، سطوح کلیدی عرضه و تقاضا و جریان نقدینگی ساختار بازار",
+    title: "پرایس اکشن",
+    subtitle: "رفتارشناسی قیمت نمودار",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: true,
@@ -160,8 +161,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_elliott_wave",
-    title: "تحلیل الیوت ویو",
-    subtitle: "موج‌شماری استاندارد امواج انگیزشی و اصلاحی بر اساس قوانین کلاسیک با امواج الیوت",
+    title: "الیوت ویو",
+    subtitle: "شمارش امواج کلاسیک",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: true,
@@ -170,8 +171,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_neowave",
-    title: "تحلیل نئو ویو",
-    subtitle: "رویکرد شمارش پیشرفته نئوویو برای ساختار پیچیده امواج در بازارهای پرنوسان",
+    title: "نئو ویو",
+    subtitle: "ساختار پیچیده امواج",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: true,
@@ -180,8 +181,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_wyckoff",
-    title: "تحلیل وایکوف",
-    subtitle: "تشخیص فازهای انباشت، توزیع و حرکت‌های تله خرید/فروش به روش قانونمند وایکوف",
+    title: "وایکوف",
+    subtitle: "تشخیص فاز انباشت",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: true,
@@ -191,7 +192,7 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   {
     id: "b_rtm",
     title: "تحلیل RTM",
-    subtitle: "شناسایی نواحی پیشرفته عرضه و تقاضا مبتنی بر متدهای دقیق آر‌تی‌ام (Read The Market)",
+    subtitle: "عرضه تقاضا پیشرفته",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: true,
@@ -201,7 +202,7 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   {
     id: "b_ict",
     title: "تحلیل ICT",
-    subtitle: "بررسی و شکار اردر بلاک‌ها، استخر نقدینگی و گپ‌های ارزش منصفانه با مدل‌های آی‌سی‌تی",
+    subtitle: "شکار اردر بلاک",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: false,
@@ -210,8 +211,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_smart_money",
-    title: "تحلیل Smart Money",
-    subtitle: "ردیابی گام‌های معامله‌گران نهادی، ساختار بازار (BOS/CHoCH) و لیکوئیدیتی اسمارت مانی",
+    title: "پول هوشمند",
+    subtitle: "جریان نقدینگی نهادی",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: false,
@@ -221,17 +222,18 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   {
     id: "b_summary",
     title: "ارائه جمع‌بندی",
-    subtitle: "ترکیب و نتیجه‌گیری نهایی دیدگاه‌های مختلف برای تشکیل بهترین تصمیم معاملاتی",
+    subtitle: "جمع‌بندی نهایی هوشمند",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: false,
     [ProductTier.PRO]: true,
-    [ProductTier.ULTRA]: true
+    [ProductTier.ULTRA]: true,
+    isSpecial: true
   },
   {
     id: "b_neutral",
-    title: "تحلیل جهت‌گیری بی‌طرف (Neutral)",
-    subtitle: "شناسایی نواحی رنج، تثبیت قیمت و هشدارهای مربوط به دور ماندن از معامله در طوفان‌ها",
+    title: "سیگنال رنج",
+    subtitle: "تشخیص نواحی رنج",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: true,
@@ -240,8 +242,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_bullish",
-    title: "تحلیل جهت‌گیری صعودی (Bullish)",
-    subtitle: "فرموله‌سازی مومنتوم‌های خرید، سناریوهای شکست سقف و اهداف صعودی قیمت",
+    title: "سیگنال صعودی",
+    subtitle: "اهداف صعود قیمت",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: false,
@@ -250,8 +252,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_bearish",
-    title: "تحلیل جهت‌گیری نزولی (Bearish)",
-    subtitle: "فرموله‌سازی مومنتوم‌های فروش، پیش‌بینی شکست کف‌ها و اهداف ریزشی بازار",
+    title: "سیگنال نزولی",
+    subtitle: "اهداف ریزش قیمت",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
     [ProductTier.STARTER]: false,
@@ -261,29 +263,20 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
 
   // --- Outputs Category ---
   {
-    id: "o_pdf",
-    title: "خروجی جامع فایل PDF",
-    subtitle: "تهیه خودکار گزارش‌های تحلیلی ساختاریافته به صورت پی‌دی‌اف زیبانگار و مصور",
+    id: "o_deep_analysis",
+    title: "تحلیل عمیق",
+    subtitle: "ارزیابی چندلایه بازار",
     category: "outputs",
     categoryLabel: "مدیریت خروجی‌ها و ابزار مانیتورینگ",
     [ProductTier.STARTER]: false,
     [ProductTier.PRO]: true,
-    [ProductTier.ULTRA]: true
+    [ProductTier.ULTRA]: true,
+    isSpecial: true
   },
   {
     id: "o_text",
-    title: "خروجی متنی کپی‌شدنی گام‌به‌گام",
-    subtitle: "دریافت متن تمیز خلاصه گزارش جهت ارسال مستقیم در تلگرام یا ابزارهای دیگر",
-    category: "outputs",
-    categoryLabel: "مدیریت خروجی‌ها و ابزار مانیتورینگ",
-    [ProductTier.STARTER]: false,
-    [ProductTier.PRO]: false,
-    [ProductTier.ULTRA]: true
-  },
-  {
-    id: "o_white_label",
-    title: "خروجی بدون کپی‌رایت برندینگ (White-Label)",
-    subtitle: "امکان حذف لوگو و امضای ربات جهت استفاده و بازنشر شخصی با نام دلخواه شما",
+    title: "خروجی متنی",
+    subtitle: "خلاصه کپی‌شدنی گزارش",
     category: "outputs",
     categoryLabel: "مدیریت خروجی‌ها و ابزار مانیتورینگ",
     [ProductTier.STARTER]: false,
@@ -292,8 +285,8 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "o_dual_chart",
-    title: "بارگذاری همزمان دو چارت/تایم‌فریم",
-    subtitle: "مقایسه همزمان مولتی‌تایم‌فرم دو جفت‌ارز یا دو نماد متفاوت در قالب یک مانیتور واحد",
+    title: "چارت همزمان",
+    subtitle: "مقایسه چند تایم‌فریم",
     category: "outputs",
     categoryLabel: "مدیریت خروجی‌ها و ابزار مانیتورینگ",
     [ProductTier.STARTER]: false,
@@ -348,7 +341,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
         points: { [ProductTier.STARTER]: 4, [ProductTier.PRO]: 1, [ProductTier.ULTRA]: 0 }
       },
       {
-        text: "نیاز به دریافت فایل PDF تحلیل دارم تا ذخیره یا ارسال کنم",
+        text: "نیاز به تحلیل عمیق بازار دارم تا روندهای بزرگ و منطق معامله نهادی را درک کنم",
         points: { [ProductTier.STARTER]: 0, [ProductTier.PRO]: 4, [ProductTier.ULTRA]: 1 }
       },
       {

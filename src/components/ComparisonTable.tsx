@@ -141,17 +141,23 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = React.memo(({
             {/* Table Body */}
             <tbody className="divide-y divide-white/10 text-[10.5px]">
               {filteredRows.map((row, index) => {
+                const isRowSpecial = row.isSpecial;
                 return (
                   <tr 
                     key={row.id}
-                    className={`group transition-colors duration-150 select-none
-                      ${index % 2 === 0 ? "bg-neutral-950/20" : "bg-neutral-900/40"}
-                      hover:bg-neutral-800/40`}
+                    className={`group transition-all duration-150 select-none
+                      ${isRowSpecial 
+                        ? "bg-amber-950/30 border-y border-amber-500/15 hover:bg-amber-950/45 text-amber-100" 
+                        : index % 2 === 0 
+                          ? "bg-neutral-950/20 hover:bg-neutral-800/40" 
+                          : "bg-neutral-900/40 hover:bg-neutral-800/40"
+                      }`}
                   >
                     {/* Name of the feature */}
-                    <td className="py-2 px-2.5 font-medium text-white/90 border-l border-white/5">
+                    <td className="py-2 px-2.5 font-medium border-l border-white/5">
                       <div className="flex items-center gap-1.5 max-w-xs">
-                        <span className="text-[10px] font-bold text-neutral-200 group-hover:text-white transition-colors">
+                        <span className={`text-[10px] font-bold group-hover:text-white transition-colors
+                          ${isRowSpecial ? "text-amber-300 font-extrabold animate-pulse" : "text-neutral-200"}`}>
                           {row.title}
                         </span>
                       </div>
@@ -169,7 +175,7 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = React.memo(({
                     {/* PRO Value */}
                     <td 
                       className={`py-1.5 text-center transition-colors duration-150 border-l border-white/5
-                        ${highlightedPlanId === ProductTier.PRO ? "bg-[#bef264]/5" : ""}
+                        ${highlightedPlanId === ProductTier.PRO ? (isRowSpecial ? "bg-[#bef264]/10" : "bg-[#bef264]/5") : ""}
                         ${!row[ProductTier.PRO] ? "opacity-50" : ""}`}
                     >
                       {renderCheckIcon(ProductTier.PRO, row[ProductTier.PRO])}
@@ -178,7 +184,7 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = React.memo(({
                     {/* ULTRA Value */}
                     <td 
                       className={`py-1.5 text-center transition-colors duration-150
-                        ${highlightedPlanId === ProductTier.ULTRA ? "bg-[#f43f5e]/5" : ""}
+                        ${highlightedPlanId === ProductTier.ULTRA ? (isRowSpecial ? "bg-[#f43f5e]/10" : "bg-[#f43f5e]/5") : ""}
                         ${!row[ProductTier.ULTRA] ? "opacity-50" : ""}`}
                     >
                       {renderCheckIcon(ProductTier.ULTRA, row[ProductTier.ULTRA])}

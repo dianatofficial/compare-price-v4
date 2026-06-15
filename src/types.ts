@@ -38,6 +38,7 @@ export interface ComparisonRow {
   [ProductTier.STARTER]: boolean;
   [ProductTier.PRO]: boolean;
   [ProductTier.ULTRA]: boolean;
+  isSpecial?: boolean;
 }
 
 export interface QuizQuestion {

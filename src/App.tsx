@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export default function App() {
-  const [isYearly, setIsYearly] = useState<boolean>(true);
+  const [isYearly, setIsYearly] = useState<boolean>(false);
   const [highlightedPlanId, setHighlightedPlanId] = useState<string | null>(null);
   const [selectedPlanForCheckout, setSelectedPlanForCheckout] = useState<PlanDetail | null>(null);
   const [activeTab, setActiveTab] = useState<"plans" | "quiz">("plans");
@@ -85,7 +85,7 @@ export default function App() {
                 className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 text-[11px] font-black rounded-lg transition-all duration-300 cursor-pointer text-center tracking-tight active:scale-98
                   ${isYearly 
                     ? "bg-[#bef264] text-neutral-950 shadow-[0_4px_18px_rgba(190,242,100,0.5)] border-b-2 border-[#84cc16]" 
-                    : "bg-neutral-900/60 text-neutral-400 hover:text-white border border-white/5"
+                    : "bg-neutral-950 text-[#bef264] border border-[#bef264]/30 hover:border-[#bef264]/60 shadow-[0_0_12px_rgba(190,242,100,0.12)] hover:shadow-[0_0_18px_rgba(190,242,100,0.25)] animate-pulse-yearly-glow"
                   }`}
               >
                 <span>پرداخت سالانــه</span>
