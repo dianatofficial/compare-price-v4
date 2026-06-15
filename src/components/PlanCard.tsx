@@ -61,9 +61,8 @@ export const PlanCard: React.FC<PlanCardProps> = React.memo(({
       id={`plan-card-${plan.id.toLowerCase()}`}
       onMouseEnter={() => onHover(plan.id)}
       onMouseLeave={() => onHover(null)}
-      className={`relative rounded-xl p-1.5 sm:p-2.5 transition-all duration-300 ease-out flex flex-col justify-between h-full group min-w-0 flex-1 select-none border-t border-x scale-100
+      className={`relative rounded-xl p-1.5 sm:p-2.5 transition-all duration-300 ease-out flex flex-col justify-between h-full group min-w-0 flex-1 select-none border-t border-x scale-100 opacity-100
         ${isFocused ? "z-10" : ""}
-        ${isDimmed ? "opacity-90" : "opacity-100"}
         ${plan.id === "PRO" && !isFocused ? "animate-pulse-pro-card" : ""}
       `}
       style={{

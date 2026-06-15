@@ -21,7 +21,6 @@ export default function App() {
   const [isYearly, setIsYearly] = useState<boolean>(false);
   const [highlightedPlanId, setHighlightedPlanId] = useState<string | null>(null);
   const [selectedPlanForCheckout, setSelectedPlanForCheckout] = useState<PlanDetail | null>(null);
-  const [activeTab, setActiveTab] = useState<"plans" | "quiz">("plans");
 
   const handleHoverPlan = useCallback((id: string | null) => {
     setHighlightedPlanId(id);
@@ -102,97 +101,50 @@ export default function App() {
             </span>
           </div>
 
-          {/* C. Application Segmented Sub-View Toggle Tabs with Premium UX */}
-          <div className="flex items-center gap-1 bg-neutral-950/90 p-1 border border-white/5 rounded-2xl select-none shadow-inner">
-            <button
-              onClick={() => setActiveTab("plans")}
-              className={`flex-1 py-2 text-[10.5px] font-black rounded-xl transition-all duration-300 text-center cursor-pointer flex items-center justify-center gap-1.5 active:scale-98
-                ${activeTab === "plans" 
-                  ? "bg-neutral-900 border border-white/10 text-[#bef264] shadow-[0_4px_12px_rgba(0,0,0,0.9)]" 
-                  : "bg-transparent text-neutral-400 hover:text-neutral-200"
-                }`}
-            >
-              <ArrowRightLeft className="w-3.5 h-3.5 shrink-0" />
-              <span>پلن‌ها و مقایسه فنی</span>
-            </button>
-            
-            <button
-              onClick={() => setActiveTab("quiz")}
-              className={`flex-1 py-2 text-[10.5px] font-black rounded-xl transition-all duration-300 text-center cursor-pointer flex items-center justify-center gap-1.5 active:scale-98
-                ${activeTab === "quiz" 
-                  ? "bg-neutral-900 border border-white/10 text-[#bef264] shadow-[0_4px_12px_rgba(0,0,0,0.9)]" 
-                  : "bg-transparent text-neutral-400 hover:text-neutral-200"
-                }`}
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#bef264] shrink-0 animate-pulse" />
-              <span>مشاوره و سنجش هوشمند</span>
-            </button>
-          </div>
-
-          {/* D. Main Segment Area with motion transitions */}
+          {/* D. Main Segment Area directly rendered */}
           <div className="relative">
-            <AnimatePresence mode="wait">
-              {activeTab === "plans" ? (
-                <motion.div
-                  key="plans"
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="flex flex-col gap-4 w-full"
-                >
-                  {/* Plan Cards Grid in one row side-by-side (Separated 3D Section) */}
-                  <div className="p-2.5 rounded-2xl bg-[#090909]/80 border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.95),_inset_0_1px_1px_rgba(255,255,255,0.03)] flex flex-col gap-2.5 select-none hover:border-white/10 transition-colors duration-300">
-                    <div className="flex items-center justify-between border-r-2 border-[#bef264] pr-1.5">
-                      <h4 className="text-[11px] font-black text-white">انتخاب پلن و خرید مستقیم</h4>
-                      <span className="text-[8.5px] text-neutral-400">۳ سطح عملکردی</span>
-                    </div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="flex flex-col gap-4 w-full"
+            >
+              {/* Plan Cards Grid in one row side-by-side (Separated 3D Section) */}
+              <div className="p-2.5 rounded-2xl bg-[#090909]/80 border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.95),_inset_0_1px_1px_rgba(255,255,255,0.03)] flex flex-col gap-2.5 select-none hover:border-white/10 transition-colors duration-300">
+                <div className="flex items-center justify-between border-r-2 border-[#bef264] pr-1.5">
+                  <h4 className="text-[11px] font-black text-white">انتخاب پلن و خرید مستقیم</h4>
+                  <span className="text-[8.5px] text-neutral-400">۳ سطح عملکردی</span>
+                </div>
 
-                    <div className="grid grid-cols-3 gap-1.2 w-full">
-                      {PLANS.map((plan) => (
-                        <PlanCard
-                          key={plan.id}
-                          plan={plan}
-                          isYearly={isYearly}
-                          onSelect={handleSelectPlanForCheckout}
-                          isFocused={highlightedPlanId === plan.id}
-                          onHover={handleHoverPlan}
-                          highlightedPlanId={highlightedPlanId}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Detailed Comparison Table (Separated 3D Section) */}
-                  <div className="p-2.5 rounded-2xl bg-[#090909]/80 border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.95),_inset_0_1px_1px_rgba(255,255,255,0.03)] flex flex-col gap-2.5 hover:border-white/10 transition-colors duration-300">
-                    <div className="flex items-center justify-between border-r-2 border-[#f43f5e] pr-1.5 select-none">
-                      <h4 className="text-[11px] font-black text-white">جدول تخصصی مقایسه دسترسی‌ها</h4>
-                      <span className="text-[8.5px] text-neutral-400">تفکیک امکانات سطوح رباتیک</span>
-                    </div>
-                    
-                    <ComparisonTable 
-                      onSelectPlan={handleSelectPlanForCheckout}
+                <div className="grid grid-cols-3 gap-1.2 w-full">
+                  {PLANS.map((plan) => (
+                    <PlanCard
+                      key={plan.id}
+                      plan={plan}
+                      isYearly={isYearly}
+                      onSelect={handleSelectPlanForCheckout}
+                      isFocused={highlightedPlanId === plan.id}
+                      onHover={handleHoverPlan}
                       highlightedPlanId={highlightedPlanId}
-                      onHoverPlan={handleHoverPlan}
                     />
-                  </div>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="quiz"
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="w-full"
-                >
-                  <PlanRecommender
-                    onSelectPlan={handleSelectPlanForCheckout}
-                    onHighlightPlan={handleHoverPlan}
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  ))}
+                </div>
+              </div>
+
+              {/* Detailed Comparison Table (Separated 3D Section) */}
+              <div className="p-2.5 rounded-2xl bg-[#090909]/80 border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.95),_inset_0_1px_1px_rgba(255,255,255,0.03)] flex flex-col gap-2.5 hover:border-white/10 transition-colors duration-300">
+                <div className="flex items-center justify-between border-r-2 border-[#f43f5e] pr-1.5 select-none">
+                  <h4 className="text-[11px] font-black text-white">جدول تخصصی مقایسه دسترسی‌ها</h4>
+                  <span className="text-[8.5px] text-neutral-400">تفکیک امکانات سطوح رباتیک</span>
+                </div>
+                
+                <ComparisonTable 
+                  onSelectPlan={handleSelectPlanForCheckout}
+                  highlightedPlanId={highlightedPlanId}
+                  onHoverPlan={handleHoverPlan}
+                />
+              </div>
+            </motion.div>
           </div>
 
         </div>

@@ -232,7 +232,7 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_neutral",
-    title: "سیگنال رنج",
+    title: "سوگیری بی‌طرف",
     subtitle: "تشخیص نواحی رنج",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
@@ -242,7 +242,7 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_bullish",
-    title: "سیگنال صعودی",
+    title: "سوگیری صعودی",
     subtitle: "اهداف صعود قیمت",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
@@ -252,7 +252,7 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     id: "b_bearish",
-    title: "سیگنال نزولی",
+    title: "سوگیری نزولی",
     subtitle: "اهداف ریزش قیمت",
     category: "biases",
     categoryLabel: "جهت‌گیری‌ها و سیگنال‌های استراتژیک",
